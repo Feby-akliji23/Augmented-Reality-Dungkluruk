@@ -135,7 +135,7 @@ Semua pengaturan tersimpan otomatis di browser (`localStorage`, kunci `dungkluru
 
 ```bash
 # 1. Masuk ke folder proyek
-cd AR-BETA_V01
+cd Augmented-Reality-Dungkluruk
 
 # 2. Pasang dependensi
 npm install        # atau: npm ci
@@ -176,7 +176,7 @@ WebXR hanya berjalan di **HTTPS**. Alamat IP lokal (`http://192.168.x.x`) tidak 
 ## Struktur Proyek
 
 ```
-AR-BETA_V01/
+Augmented-Reality-Dungkluruk/
 ├── index.html              # Struktur halaman & seluruh elemen UI
 ├── app.ts                  # Titik masuk: inisialisasi preview, AR, hotspot, pengaturan, service worker
 ├── style.css               # Mengimpor seluruh file di styles/
@@ -334,9 +334,9 @@ Langkah awal di repositori GitHub:
 
 1. Buka **Settings → Pages**.
 2. Pada **Source**, pilih **GitHub Actions**.
-3. Push ke `main`. Situs tersedia di `https://<username>.github.io/AR-BETA_V01/`.
+3. Push ke `main`. Situs tersedia di `https://feby-akliji23.github.io/Augmented-Reality-Dungkluruk/`.
 
-> **Penting:** `vite.config.js` memakai `base: "/AR-BETA_V01/"` saat berjalan di GitHub Actions. Jika nama repositori berbeda, ubah nilai tersebut agar aset tidak gagal dimuat (404).
+> **Catatan:** `vite.config.js` mengambil `base` otomatis dari nama repositori (`GITHUB_REPOSITORY`) saat build di GitHub Actions, jadi aset tetap termuat walaupun nama repositori diganti. Namun alamat GitHub Pages ikut berubah dan link lama tidak dialihkan otomatis.
 
 ---
 

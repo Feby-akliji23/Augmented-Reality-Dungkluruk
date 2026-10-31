@@ -4,6 +4,8 @@ import { copyFileSync, mkdirSync, existsSync, readFileSync, readdirSync, statSyn
 
 const { version: appVersion } = JSON.parse(readFileSync(resolve("package.json"), "utf8"));
 const buildId = `${appVersion}-${Date.now().toString(36)}`;
+// GitHub Pages serves the site under /<repo-name>/, so follow the repo name instead of hardcoding it.
+const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1];
 
 function copyDracoPlugin() {
   return {
@@ -36,7 +38,7 @@ function versionServiceWorkerPlugin() {
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   return {
-    base: process.env.GITHUB_ACTIONS ? "/AR-BETA_V01/" : "/",
+    base: process.env.GITHUB_ACTIONS && repoName ? `/${repoName}/` : "/",
     plugins: [copyDracoPlugin(), versionServiceWorkerPlugin()],
     server: {
       host: true,
