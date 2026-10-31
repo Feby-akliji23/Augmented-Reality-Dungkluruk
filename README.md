@@ -181,7 +181,7 @@ Augmented-Reality-Dungkluruk/
 ├── app.ts                  # Titik masuk: inisialisasi preview, AR, hotspot, pengaturan, service worker
 ├── style.css               # Mengimpor seluruh file di styles/
 ├── modules/
-│   ├── config.ts           # ⭐ Konfigurasi model, kamera, & 10 titik wisata
+│   ├── config.ts           #  Konfigurasi model, kamera, & 10 titik wisata
 │   ├── types.ts            # Tipe TypeScript bersama
 │   ├── dom.ts              # Referensi elemen DOM
 │   ├── ui.ts               # Pembuatan kartu hotspot, state UI AR, petunjuk gestur
